@@ -1,0 +1,39 @@
+.ticket
+  %br
+  %br
+  %table
+    %tr
+      %td
+        #{I18n.t 'strings.ticket_name_label'}:
+      %td
+        =@ticket.name
+    %tr
+      %td
+        #{I18n.t 'strings.ticket_email_label'}:
+      %td
+        =@ticket.email
+    %tr
+      %td
+        #{I18n.t 'strings.ticket_department_label'}:
+      %td
+        =@ticket.code
+    %tr
+      %td
+        #{I18n.t 'strings.ticket_subject_label'}:
+      %td
+        =@ticket.subject
+    %tr
+      %td
+        #{I18n.t 'strings.ticket_description_label'}:
+      %td
+        =@ticket.description
+    %tr
+      %td
+        #{I18n.t 'strings.ticket_department_label'}:
+      %td
+        =@ticket.department
+    %tr
+      %td
+        #{I18n.t 'strings.ticket_status_label'}:
+      %td
+        =@ticket.status.name

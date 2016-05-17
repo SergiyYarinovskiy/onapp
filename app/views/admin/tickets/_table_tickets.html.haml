@@ -1,0 +1,12 @@
+%table
+  %tr
+    %th Status
+    %th Ticket id
+    %th
+
+  -@tickets.each do |ticket|
+    %tr
+      %td= ticket.status.name
+      %td= ticket.code
+      %td= link_to 'Show', ticket_path(ticket)
+      %td= link_to 'Edit', edit_ticket_path(ticket)

@@ -1,0 +1,6 @@
+.ticket
+  =semantic_form_for @ticket, url: ticket_path(@ticket), method: :patch do |f|
+    =f.inputs :status
+    =f.inputs :admin_user
+    =f.actions
+=render 'reply'

@@ -1,0 +1,28 @@
+!!! html
+%html
+  %head
+    %title IssueTracker
+    =stylesheet_link_tag 'application', media: 'all'
+    =javascript_include_tag 'application'
+    =csrf_meta_tags
+  %body
+  %nav.navbar.navbar-default.navbar-static-top
+    %div.container
+      %p
+        =link_to 'Main page', root_path
+        =link_to 'All tickets', tickets_path
+      -if admin_user_signed_in?
+        %p.navbar-text Hello, #{current_admin_user.email}
+        =link_to button_tag('Sign out', class: 'btn btn-default navbar-btn'),
+          destroy_admin_user_session_path, method: :delete
+      -else
+        =link_to button_tag('Sign in', class: 'btn btn-default navbar-btn'),
+          new_admin_user_session_path
+        =link_to button_tag('Register', class: 'btn btn-default navbar-btn'), new_admin_user_registration_path
+  .container
+  %span.notice=notice
+  %span.alert=alert
+  %br
+  %br
+  =yield
+  %br

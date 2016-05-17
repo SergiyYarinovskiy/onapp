@@ -1,0 +1,5 @@
+=semantic_form_for @reply do |f|
+  =hidden_field_tag 'reply[ticket_id]', @ticket.id
+  =hidden_field_tag 'reply[admin_user_id]', current_admin_user.id
+  =f.inputs :body
+  =f.actions

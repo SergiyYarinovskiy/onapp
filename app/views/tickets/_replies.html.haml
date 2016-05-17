@@ -1,0 +1,15 @@
+%hr
+Replies:
+%hr
+%table
+-@ticket.replies.each do |reply|
+  %tr
+    %td
+      #{I18n.t 'strings.reply_author_label'}: #{reply.admin_user.email}
+      %br
+      #{I18n.t 'strings.reply_created_label'}: |
+      #{reply.created_at.localtime.strftime('%F %R')}
+      %br
+      #{I18n.t 'strings.reply_body_label'}: #{reply.body}
+      %br
+      %br

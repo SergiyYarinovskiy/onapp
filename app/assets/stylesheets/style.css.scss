@@ -1,0 +1,23 @@
+body {
+	background-color: #ffffe6;
+}
+
+.ticket {
+  width: 500px;
+}
+
+.input_action, .input.optional {
+	display: flex;
+}
+
+.inputs, .actions {
+  border: none;
+}
+
+.label {
+	padding-right: 20px;
+}
+
+ol li {
+    list-style-type: none;
+}

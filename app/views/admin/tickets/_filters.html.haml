@@ -1,0 +1,25 @@
+=form_tag search_tickets_path, method: :get do
+  %p
+    =text_field_tag :query, params[:query]
+    =submit_tag 'Search', name: nil
+
+=form_tag filter_tickets_path, method: :get do
+  %ol
+    %input{ type: 'checkbox', name: 'status[]', value: '1',
+      checked: params[:status] && params[:status].include?('1') } 
+    =I18n.t 'strings.new_tickets_label'
+    %br
+    %input{ type: 'checkbox', name: 'status[]', value: '2',
+      checked: params[:status] && params[:status].include?('2') }
+    =I18n.t 'strings.open_tickets_label'
+    %br
+    %input{ type: 'checkbox', name: 'status[]', value: '3',
+      checked: params[:status] && params[:status].include?('3') }
+    =I18n.t 'strings.onhold_tickets_label'
+    %br
+    %input{ type: 'checkbox', name: 'status[]', value: '4',
+      checked: params[:status] && params[:status].include?('4') }
+    =I18n.t 'strings.closed_tickets_label'
+    %br
+    =submit_tag 'Show tickets', name: nil
+    %br
